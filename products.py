@@ -1,13 +1,18 @@
-#讀取檔案
-#split切割
+import os # operating system作業系統(要詢問電腦裡有沒有某個檔案)
+
 products = []
-with open('products.csv.', 'r') as f:
-	for line in f:
-		if '商品名稱,商品價格' in line:
-			continue
-		name, price = line.strip().split(',') #只要遇到','就切割
-		products.append([name, price])
-print(products)
+if os.path.isfile('products.csv')
+	print('yeah!找到檔案了!')
+	with open('products.csv.', 'r') as f:
+		for line in f:
+			if '商品名稱,商品價格' in line:
+				continue #繼續(跳過目前迴圈)
+			name, price = line.strip().split(',') #只要遇到','就切割
+			products.append([name, price])
+	print(products)
+
+else:
+	print('Sorry,找不到檔案!')
 
 #讓使用者輸入及建立清單
 while True:
